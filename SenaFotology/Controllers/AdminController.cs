@@ -1,83 +1,57 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SenaFotology.Models;
 
 namespace SenaFotology.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: AdminController
+        // GET: Admin/Index
         public ActionResult Index()
         {
             return View();
         }
 
-        // GET: AdminController/Details/5
-        public ActionResult Details(int id)
+        // GET: Admin/IniciarSesionAdministrador
+        public ActionResult IniciarSesionAdministrador()
         {
+            // Retorna la vista de inicio de sesión del administrador
             return View();
         }
 
-        // GET: AdminController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: AdminController/Create
+        // POST: Admin/IniciarSesionAdministrador
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult IniciarSesionAdministrador(LoginViewModel model)
         {
-            try
+            // Lógica de autenticación del administrador
+            if (IsValidAdmin(model.Email, model.Clave))
             {
-                return RedirectToAction(nameof(Index));
+                // Redirige a un panel de administrador o página principal después de un inicio de sesión exitoso
+                return RedirectToAction("AdminPanel");
             }
-            catch
+            else
             {
-                return View();
+                // Redirige de nuevo a la página de inicio de sesión con un mensaje de error
+                return RedirectToAction("Index", new { error = "Credenciales inválidas" });
             }
         }
 
-        // GET: AdminController/Edit/5
-        public ActionResult Edit(int id)
+        // Método para validar las credenciales del administrador (simulado)
+        private bool IsValidAdmin(string email, string clave)
         {
+            // Lógica de validación de administrador
+            // Simulando una validación simple
+            return (email == "admin@dominio.com" && clave == "contraseña");
+        }
+
+        // GET: Admin/AdminPanel
+        public ActionResult AdminPanel()
+        {
+            // Vista del panel de administrador
             return View();
         }
 
-        // POST: AdminController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: AdminController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AdminController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        // Las demás acciones del controlador para operaciones CRUD, como Create, Edit, Delete, etc.
     }
 }
