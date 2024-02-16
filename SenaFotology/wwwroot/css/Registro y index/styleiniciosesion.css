@@ -1,90 +1,135 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+@import url('https://fonts.googleapis.com/css?family=Mukta:200,300,400&display=swap');
+
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background: linear-gradient(to right, #ffa97e, #ff7d2c);
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh
-    ;
-    background: linear-gradient(to right,#f6bb09, #ffdc72);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    text-align: center;
-    padding: 50px;
-    box-shadow: 0 5px 10px  #ff7626;
-}
-
-form .tituloo {
-    color: black;
-    font-size: 40px;
-    font-weight: 900;
-    margin-bottom: 0px;
-}
-
-form .sub {
-    color: #bab9b9;
-    font-size: 12px;
-    margin-bottom: 30px;
-}
-
-form label {
-    margin-bottom: 44px;
-    color: none;
-}
-
-form label .fa-solid{
-    font-size: 21px;
-    color: #ff7626;
-
-}
-
-form label input {
-    padding: 10px 15px;
-    font-size: 15px;
-    border: 1px solid #dbdbdb;
-    margin-bottom: 15px;
-    border-radius: 30px;
-    border-bottom: solid 1px #ff7626;
-    outline: 0px;
-    transition: all 0.5s ease;
-    margin-left: 20px;
-}
-
-form label input::placeholder {
-    color: #9a9999;
-    font-style: italic;
-}
-
-form b{
-    font-size: 20px;
-}
-
-form .boton {
-    font-size: 20px;
-    font-weight: 20px;
-    color: #edf2f4;
-    padding: 8px 20px;
-    background: #ff7626;
-    border: none;
-    cursor: pointer;
-    text-decoration: none;
     margin: 0;
-    border-radius: 40px;
-    transition: all 0.5s ease 0s;
-
 }
 
-form .boton:hover {
-    color: rgb(255, 255, 255);
-    background-color: #9b4717;
+.contenedor-form {
+    background-color: #fff;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 30px #000;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.contenedor-form .header {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.contenedor-form .header a {
+    color: #000000;
+    text-decoration: none;
+    
+    margin-right: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contenedor-form .header .selected {
+    border-bottom: 2px solid #ff914d;
+}
+
+.contenedor-form .fila {
+    margin-bottom: 20px;
+}
+
+.contenedor-form .fila label {
+    font-size: 14px;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.contenedor-form .fila input {
+    display: block;
+    width: 100%;
+    color: #000000;
+    background-color: #ff6f0012;
+    border: none;
+    padding: 10px;
+    border-radius: 30px;
+    font-size: 14px;
 }
 
 
+
+.contenedor-form .fila .check {
+    display: inline-block;
+    width: auto;
+}
+
+.contenedor-form span {
+    display: inline-block;
+    color: #ccc;
+    margin-top: 5px;
+}
+
+.contenedor-form .btn {
+    width: 100%;
+    background-color: #ff914d;
+    border: none;
+    padding: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 30px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.olvido {
+    text-align: center;
+    display: block;
+    color: #ff914d; /* Color predeterminado (naranja) */
+    margin-top: 15px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent; /* Quita la línea subrayada */
+    transition: color 0.3s; /* Agrega una transición de color suave */
+}
+
+.olvido:hover {
+    color: #ffa159; /* Cambia el color al pasar el mouse por encima (naranja más claro) */
+}
+
+
+#switchToSignup {
+    font-size: 14px;
+    color: #ff914d; /* Puedes cambiar este color según tus preferencias */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#switchToSignup:hover {
+    color: #ffa159; /* Cambia el color al pasar el mouse por encima */
+}
+
+.error {
+    color: #fff; 
+    background-color: #ff914d; /* Fondo rojo claro */
+    border-radius: 20px;
+    padding: 10px; /* Espacio interno */
+    margin-top: 10px; /* Espacio superior */
+    font-weight: bold; /* Texto en negrita */
+    text-align: center;
+    align-items: center;
+}

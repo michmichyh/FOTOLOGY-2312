@@ -8,7 +8,7 @@ const administradorContainer = document.getElementById('administradorContainer')
 
 document.querySelectorAll('.header a').forEach((link) => {
     link.addEventListener('click', function (e) {
-        e.preventDefault(); 
+        e.preventDefault();
 
         usuarioContainer.style.display = 'none';
         fotografoContainer.style.display = 'none';
@@ -24,4 +24,3 @@ document.querySelectorAll('.header a').forEach((link) => {
         }
     });
 });
-

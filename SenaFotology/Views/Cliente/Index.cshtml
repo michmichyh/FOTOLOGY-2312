@@ -1,0 +1,59 @@
+﻿@{
+    Layout = null; // Evita que utilices un diseño predeterminado si lo tienes configurado
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    @* <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script> *@
+    <link rel="stylesheet" href="~/css/Administrador css/styles.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
+</head>
+<body>
+    <div class="contenedor-form">
+        <div id="usuarioContainer">
+                <input type="hidden" name="user-type" value="Usuario">
+                <div class="header">
+                    <a href="#" class="selected" data-user-type="Usuario">USUARIO</a>
+                    <a href="#" data-user-type="Fotografo">FOTOGRAFO</a>
+                    <a href="#" data-user-type="Administrador">ADMINISTRADOR</a>
+                </div>
+                <!-- Resto del formulario para Usuario -->
+        </div>
+
+        <div id="fotografoContainer">
+                <input type="hidden" name="user-type" value="Fotografo">
+                <div class="header">
+                    <a href="#" data-user-type="Usuario">USUARIO</a>
+                    <a href="#" class="selected" data-user-type="Fotografo">FOTOGRAFO</a>
+                    <a href="#" data-user-type="Administrador">ADMINISTRADOR</a>
+                </div>
+                <!-- Resto del formulario para Fotógrafo -->
+        </div>
+
+        <div id="administradorContainer">
+                <input type="hidden" name="user-type" value="Administrador">
+                <div class="header">
+                    <a href="#" data-user-type="Usuario">USUARIO</a>
+                    <a href="#" data-user-type="Fotografo">FOTOGRAFO</a>
+                    <a href="#" class="selected" data-user-type="Administrador">ADMINISTRADOR</a>
+                </div>
+                <!-- Resto del formulario para Administrador -->
+        </div>
+
+        <hr>
+        <a href="#olvido" class="olvido">Olvidó la Contraseña</a>
+    </div>
+
+    <script src="~/js/script.js"></script>
+
+
+</body>
+</html>
